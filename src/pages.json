@@ -1,0 +1,65 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "校园导航"
+			}
+		},
+		{
+			"path": "pages/guide/navigate",
+			"style": {
+				"navigationBarTitleText": "导览服务"
+			}
+		},
+		{
+			"path": "pages/campus/guide",
+			"style": {
+				"navigationBarTitleText": "校园指南"
+			}
+		},
+		{
+			"path": "pages/campus/detail",
+			"style": {
+				"navigationBarTitleText": "指南详情"
+			}
+		},
+		{
+			"path": "pages/lost/found",
+			"style": {
+				"navigationBarTitleText": "失物招领"
+			}
+		},
+		{
+			"path": "pages/lost/detail",
+			"style": {
+				"navigationBarTitleText": "物品详情"
+			}
+		},
+		{
+			"path": "pages/lost/publish",
+			"style": {
+				"navigationBarTitleText": "发布物品"
+			}
+		},
+		{
+			"path": "pages/links/links",
+			"style": {
+				"navigationBarTitleText": "相关链接",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/webview/webview",
+			"style": {
+				"navigationBarTitleText": "网页浏览"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "校园导航",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

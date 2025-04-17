@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- 图书馆建筑 -->
+  <rect x="40" y="30" width="120" height="60" fill="#9CB4CC" />
+  <!-- 屋顶 -->
+  <polygon points="40,30 100,10 160,30" fill="#6A87AD" />
+  <!-- 台阶 -->
+  <rect x="70" y="70" width="60" height="5" fill="#ffffff" />
+  <rect x="70" y="75" width="60" height="5" fill="#eeeeee" />
+  <rect x="70" y="80" width="60" height="5" fill="#dddddd" />
+  <!-- 门 -->
+  <rect x="90" y="60" width="20" height="30" fill="#4A6585" />
+  <!-- 窗户 -->
+  <rect x="50" y="40" width="15" height="20" fill="#B8D0E6" />
+  <rect x="75" y="40" width="15" height="20" fill="#B8D0E6" />
+  <rect x="110" y="40" width="15" height="20" fill="#B8D0E6" />
+  <rect x="135" y="40" width="15" height="20" fill="#B8D0E6" />
+  <!-- 柱子 -->
+  <rect x="45" y="60" width="5" height="30" fill="#6A87AD" />
+  <rect x="150" y="60" width="5" height="30" fill="#6A87AD" />
+</svg>
