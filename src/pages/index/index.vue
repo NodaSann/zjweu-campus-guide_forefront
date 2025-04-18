@@ -29,7 +29,13 @@
       </view>
       <view class="hotspot-list">
         <view class="hotspot-item" v-for="(item, index) in hotspots" :key="index">
-          <image class="hotspot-image" :src="item.image" mode="aspectFit"></image>
+          <image
+            class="hotspot-image"
+            :src="item.image"
+            mode="aspectFill"
+            :lazy-load="true"
+            :srcset="item.image + ' 1x, ' + item.image + ' 2x'"
+          ></image>
           <view class="hotspot-info">
             <text class="hotspot-name">{{ item.name }}</text>
             <text class="hotspot-time">{{ item.time }}</text>
@@ -310,20 +316,38 @@ export default {
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 10rpx;
+  gap: 10rpx; /* 缩小间距以适配小屏 */
+  padding-left: 5rpx;
+  padding-right: 5rpx;
 }
 
 .hotspot-item {
-  width: 300rpx;
-  margin-right: 20rpx;
+  width: 45vw; /* 保证320px屏幕也能一行显示两个 */
+  min-width: 140rpx;
+  max-width: 200px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  /* 可选：加点阴影提升卡片感 */
+  /* box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04); */
 }
 
 .hotspot-image {
   width: 100%;
-  height: 180rpx;
-  border-radius: 10rpx;
-  margin-bottom: 10rpx;
+  aspect-ratio: 1/1; /* 正方形比例 */
+  max-height: 50vw;  /* 限制最大高度为容器宽度，保证正方形 */
+  max-width: 50vw;
+  border-radius: 10rpx 10rpx 0 0;
   object-fit: cover;
+  display: block;
+  background: #f0f0f0;
+  /* 支持高分屏 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .hotspot-name {
@@ -335,6 +359,17 @@ export default {
 .hotspot-time {
   font-size: 24rpx;
   color: #999;
+}
+
+@media (max-width: 500px) {
+  .hotspot-item {
+    width: 45vw;
+    min-width: 45vw;
+    max-width: 45vw;
+  }
+  .hotspot-image {
+    aspect-ratio: 16/9;
+  }
 }
 
 /* 近期活动样式 */

@@ -40,7 +40,13 @@
       </view>
       
       <view class="express-image">
-        <image src="/static/express.jpg" mode="aspectFill"></image>
+        <image
+          src="/static/express.jpg"
+          mode="aspectFill"
+          :lazy-load="true"
+          srcset="/static/express.jpg 1x, /static/express.jpg 2x"
+          class="express-img"
+        ></image>
       </view>
     </view>
     
@@ -177,11 +183,23 @@ export default {
   border-radius: 15rpx;
   overflow: hidden;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.express-image image {
+.express-img {
   width: 100%;
-  height: 400rpx;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15rpx;
+  /* 支持高分屏 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .placeholder {

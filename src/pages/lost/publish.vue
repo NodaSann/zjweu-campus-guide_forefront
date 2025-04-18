@@ -39,7 +39,14 @@
             <text class="upload-icon">+</text>
             <text class="upload-text">上传图片</text>
           </view>
-          <image v-else class="preview-image" :src="formData.image" mode="aspectFill"></image>
+          <image
+            v-else
+            class="preview-image"
+            :src="formData.image"
+            mode="aspectFill"
+            :lazy-load="true"
+            :srcset="formData.image + ' 1x, ' + formData.image + ' 2x'"
+          ></image>
         </view>
       </view>
       
@@ -187,13 +194,15 @@ export default {
 /* 上传图片 */
 .upload-box {
   width: 100%;
-  height: 300rpx;
+  aspect-ratio: 16/9;
   background-color: #f8f8f8;
   border-radius: 10rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .upload-placeholder {
@@ -216,7 +225,12 @@ export default {
 .preview-image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 10rpx;
+  display: block;
+  /* 支持高分屏 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* 提交按钮 */

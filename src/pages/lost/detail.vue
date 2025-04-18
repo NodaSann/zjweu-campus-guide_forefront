@@ -13,7 +13,13 @@
       
       <!-- 物品图片 -->
       <view class="item-image-container">
-        <image class="item-image" src="/static/library.jpg" mode="aspectFill"></image>
+        <image
+          class="item-image"
+          src="/static/library.jpg"
+          mode="aspectFill"
+          :lazy-load="true"
+          srcset="/static/library.jpg 1x, /static/library.jpg 2x"
+        ></image>
       </view>
       
       <!-- 物品描述 -->
@@ -151,15 +157,25 @@ export default {
 /* 物品图片 */
 .item-image-container {
   width: 100%;
-  height: 400rpx;
+  aspect-ratio: 16/9;
   margin: 20rpx 0;
   border-radius: 10rpx;
   overflow: hidden;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10rpx;
+  /* 支持高分屏 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* 物品描述 */
