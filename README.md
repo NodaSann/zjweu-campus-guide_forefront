@@ -109,12 +109,6 @@ yarn build:mp-weixin
 
 本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件
 
-## 联系方式
-
-如有任何问题或建议，请通过以下方式联系我们：
-
-- 邮箱：example@university.edu.cn
-- 微信：UniversityNavSystem
 ```
 
 这个 README.md 文件包含了项目的基本介绍、功能特点、技术栈、项目结构、安装与运行指南、项目预览、贡献指南、许可证信息和联系方式等内容，可以帮助其他开发者快速了解您的项目。您可以根据实际情况对内容进行调整和补充。
